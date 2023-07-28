@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+// TODO script
+</script>
 <template>
   <h1>Loading Indicator with Image</h1>
   <div class="image-container">
@@ -6,7 +8,7 @@
     <img class="loaded-image" src="your_image_url_here.jpg" alt="Your Image" />
   </div>
 </template>
-<style setup>
+<style>
 /* Container for the loading indicator and image */
 .image-container {
   position: relative;
@@ -18,18 +20,18 @@
 
 /* Loading indicator styling */
 .loading-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 2rem;
-    border-color: #000 transparent;
-    border-width: 0.4rem;
-    border-style: solid;
-    /* Add animation styles */
-    animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  border-color: #000 transparent;
+  border-width: 0.4rem;
+  border-style: solid;
+  /* Add animation styles */
+  animation: spin 1s linear infinite;
 }
 
 /* Image styling */

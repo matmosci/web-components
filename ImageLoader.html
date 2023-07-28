@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Loading Indicator with Image</title>
     <style>
-        /* Container for the loading indicator and image */
-        .image-container {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            background-color: #f0f0f0;
-            overflow: hidden;
-        }
+      /* Container for the loading indicator and image */
+      .image-container {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        background-color: #f0f0f0;
+        overflow: hidden;
+      }
 
-        /* Loading indicator styling */
-        .loading-indicator {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            translate: -50% -50%;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 2rem;
-            border-color: #000 transparent;
-            border-width: 0.4rem;
-            border-style: solid;
-            /* Add animation styles */
-            animation: spin 1s linear infinite;
-        }
+      /* Loading indicator styling */
+      .loading-indicator {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 2rem;
+        border-color: #000 transparent;
+        border-width: 0.4rem;
+        border-style: solid;
+        /* Add animation styles */
+        animation: spin 1s linear infinite;
+      }
 
-        /* Image styling */
-        .loaded-image {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Hide the image until it's fully loaded */
-            opacity: 0;
-        }
+      /* Image styling */
+      .loaded-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Hide the image until it's fully loaded */
+        opacity: 0;
+      }
 
-        /* Keyframes for the loading indicator animation */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+      /* Keyframes for the loading indicator animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="image-container">
-        <div class="loading-indicator"></div>
-        <img class="loaded-image" src="your_image_url_here.jpg" alt="Your Image">
+      <div class="loading-indicator"></div>
+      <img
+        class="loaded-image"
+        src="your_image_url_here.jpg"
+        alt="Your Image"
+      />
     </div>
-</body>
+    <script>
+      const img = document.querySelector(".loaded-image");
+      const indicator = document.querySelector(".loading-indicator");
+      img.addEventListener("load", () => {
+        const duration = 1000;
+        img.style.transitionDuration = `${duration}ms`;
+        img.style.opacity = 1;
+        setTimeout(() => {
+          indicator.remove();
+        }, duration);
+      });
+    </script>
+  </body>
 </html>
