@@ -18,18 +18,18 @@
 
 /* Loading indicator styling */
 .loading-indicator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: 1;
-  /* Add animation styles */
-  animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border-color: #000 transparent;
+    border-width: 0.4rem;
+    border-style: solid;
+    /* Add animation styles */
+    animation: spin 1s linear infinite;
 }
 
 /* Image styling */
