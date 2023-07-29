@@ -2,7 +2,6 @@
 // TODO script
 </script>
 <template>
-  <h1>Loading Indicator with Image</h1>
   <div class="image-container">
     <div class="loading-indicator">Loading...</div>
     <img class="loaded-image" src="your_image_url_here.jpg" alt="Your Image" />
