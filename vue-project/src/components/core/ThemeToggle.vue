@@ -1,28 +1,22 @@
 <script setup>
+import { setTheme } from "../../utils/theme.js";
+
 function toggle() {
-  const isMediaDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const isAttrDark = document.documentElement.getAttribute("data-theme") !== "light";
-  if (isMediaDark && isAttrDark) return toLight();
-  toDark();
-}
-function toLight() {
-  document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("theme", "light");
-}
-function toDark() {
-  document.documentElement.setAttribute("data-theme", "dark");
-  localStorage.setItem("theme", "dark");
+  setTheme(localStorage.getItem("theme") === "dark" ? "light" : "dark");
 }
 </script>
+
 <template>
   <button @click="toggle">Toggle</button>
 </template>
+
 <style scoped>
 button {
-    color: var(--color-background);
-    background-color: var(--primary-color);
-    border: none;
-    padding: .2rem .4rem;
-    cursor: pointer;
+  color: var(--color-background);
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  border-radius: 2px;
 }
 </style>

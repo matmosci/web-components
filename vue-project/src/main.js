@@ -10,13 +10,9 @@ import ImageLoader from "./components/core/ImageLoader.vue";
 import LoadingIndicator from "./components/core/LoadingIndicator.vue";
 import ThemeToggle from "./components/core/ThemeToggle.vue";
 
-if ((window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("theme")) || localStorage.getItem("theme") === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  localStorage.setItem("theme", "dark");
-} else {
-  document.documentElement.setAttribute("data-theme", "light");
-  localStorage.setItem("theme", "light");
-}
+import { init } from "./utils/theme.js";
+
+init();
 
 const routes = [
   { path: "/core", component: Core },
