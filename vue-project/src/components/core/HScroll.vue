@@ -1,13 +1,17 @@
 <script setup>
+import ImageLoader from "./ImageLoader.vue";
 </script>
 <template>
   <div class="horizontal-scroll-container">
     <!-- Example items -->
-    <div class="horizontal-scroll-item">Item 1</div>
-    <div class="horizontal-scroll-item">Item 2</div>
-    <div class="horizontal-scroll-item">Item 3</div>
-    <div class="horizontal-scroll-item">Item 4</div>
-    <div class="horizontal-scroll-item">Item 5</div>
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
+    <ImageLoader class="horizontal-scroll-item" />
     <!-- Add more items as needed -->
   </div>
 </template>
@@ -18,7 +22,7 @@
   flex-wrap: nowrap;
   overflow-x: auto;
   padding: 10px;
-  background-color: #f0f0f0;
+  background-color: var(--color-background-mute);
   /* Add any additional styling you want for the container */
 }
 
@@ -28,7 +32,7 @@
   width: 200px;
   height: 200px;
   margin-right: 10px;
-  background-color: #ccc;
+  background-color: var(--color-background-soft);
   /* Add any additional styling you want for the items */
   &:last-child {
     margin-right: 0;

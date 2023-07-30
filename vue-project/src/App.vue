@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+import ThemeToggle from "./components/core/ThemeToggle.vue";
+</script>
 
 <template>
-  <router-view></router-view>
+  <div>
+    <div style="text-align: right;"><ThemeToggle/></div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <style scoped>

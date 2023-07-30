@@ -8,8 +8,15 @@ import Core from "./views/Core.vue";
 import HScroll from "./components/core/HScroll.vue";
 import ImageLoader from "./components/core/ImageLoader.vue";
 import LoadingIndicator from "./components/core/LoadingIndicator.vue";
+import ThemeToggle from "./components/core/ThemeToggle.vue";
 
-console.log(LoadingIndicator)
+if ((window.matchMedia("(prefers-color-scheme: dark)").matches && !localStorage.getItem("theme")) || localStorage.getItem("theme") === "dark") {
+  document.documentElement.setAttribute("data-theme", "dark");
+  localStorage.setItem("theme", "dark");
+} else {
+  document.documentElement.setAttribute("data-theme", "light");
+  localStorage.setItem("theme", "light");
+}
 
 const routes = [
   { path: "/core", component: Core },
@@ -20,6 +27,7 @@ const routes = [
       { name: "HScroll", path: "hscroll", component: HScroll },
       { name: "ImageLoader", path: "imageloader", component: ImageLoader },
       { name: "LoadingIndicator", path: "loadingindicator", component: LoadingIndicator },
+      { name: "ThemeToggle", path: "themetoggle", component: ThemeToggle },
     ],
   },
 ];
