@@ -1,13 +1,14 @@
 <script setup>
-import { setTheme } from "../../utils/theme.js";
+import Theme from "../../utils/Theme.utils.js";
 
 function toggle() {
-  setTheme(localStorage.getItem("theme") === "dark" ? "light" : "dark");
+  Theme.set(Theme.get() === "dark" ? "light" : "dark");
 }
 </script>
 
 <template>
   <button @click="toggle">Toggle</button>
+  <button @click="Theme.reset">Reset</button>
 </template>
 
 <style scoped>
@@ -18,5 +19,6 @@ button {
   padding: 0.2rem 0.4rem;
   cursor: pointer;
   border-radius: 2px;
+  margin-left: 2px;
 }
 </style>

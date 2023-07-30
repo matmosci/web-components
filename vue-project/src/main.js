@@ -10,9 +10,9 @@ import ImageLoader from "./components/core/ImageLoader.vue";
 import LoadingIndicator from "./components/core/LoadingIndicator.vue";
 import ThemeToggle from "./components/core/ThemeToggle.vue";
 
-import { init } from "./utils/theme.js";
+import Theme from "./utils/Theme.utils.js";
 
-init();
+Theme.init();
 
 const routes = [
   { path: "/core", component: Core },
