@@ -23,8 +23,10 @@
 
 /* theme */
 :root {
-  --primary-color: hsla(160, 100%, 37%, 1);
-  --primary-color-alpha: hsla(160, 100%, 37%, 0.2);
+  --primary-color: hsla(180, 100%, 37%, 1);
+  --primary-color-alpha: hsla(180, 100%, 37%, 0.2);
+  /* --primary-color: #ff5800ff; */
+  /* --primary-color-alpha: #ff580022; */
 }
 hr {
   border-color: var(--color-background-soft);

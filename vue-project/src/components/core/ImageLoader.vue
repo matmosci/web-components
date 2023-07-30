@@ -1,11 +1,18 @@
 <script setup>
-// TODO script
+import { ref, onMounted } from "vue";
 import Indicator from "./LoadingIndicator.vue";
+defineProps(["src"]);
+const indicator = ref();
+const image = ref();
+function onLoad() {
+  console.log(indicator.value.$el.remove());
+  image.value.style.opacity = 1;
+}
 </script>
 <template>
   <div class="image-container">
-    <Indicator class="loading-indicator" />
-    <img class="loaded-image" src="your_image_url_here.jpg" alt="Your Image" />
+    <Indicator ref="indicator" class="loading-indicator" />
+    <img ref="image" class="loaded-image" :src="src" alt="Your Image" @load="onLoad" />
   </div>
 </template>
 <style scoped>
