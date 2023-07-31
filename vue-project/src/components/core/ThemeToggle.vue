@@ -7,8 +7,10 @@ function toggle() {
 </script>
 
 <template>
-  <button @click="toggle">Toggle</button>
-  <button @click="Theme.reset">Reset</button>
+  <div>
+    <button @click="toggle">Toggle</button>
+    <button @click="Theme.reset">Reset</button>
+  </div>
 </template>
 
 <style scoped>
