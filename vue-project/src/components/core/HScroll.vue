@@ -22,7 +22,8 @@ import ImageLoader from "./ImageLoader.vue";
   flex-wrap: nowrap;
   overflow-x: auto;
   padding: 10px;
-  background-color: var(--color-background-mute);
+  /* background-color: var(--color-background-mute); */
+  background-color: transparent;
   /* -app margin */
   margin-left: -2rem;
   margin-right: -2rem;
@@ -34,6 +35,8 @@ import ImageLoader from "./ImageLoader.vue";
   height: 200px;
   margin-right: 10px;
   background-color: var(--color-background-soft);
+  box-shadow: 0 2px 8px #0008;
+  border-radius: 2px;
   &:last-child {
     margin-right: 0;
   }
